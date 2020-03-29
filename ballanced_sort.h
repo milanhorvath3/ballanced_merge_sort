@@ -10,7 +10,6 @@ struct Rider {
     int next;
     int eor;
     int eof;
-    int tmp;
 };
 
 void set_rider(const char *filename, const char *mode, struct Rider *rider_name);

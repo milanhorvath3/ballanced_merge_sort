@@ -8,6 +8,7 @@ void set_rider(const char *filename, const char *mode, struct Rider *rider_name)
         rider_name->curr = fgetc(rider_name->fp);
     rider_name->next = EOF;
     rider_name->eor = 0;
+    rider_name->eof = 0;
 }
 void close_rider(struct Rider *rider_name) {
     if (rider_name->fp != NULL)
@@ -38,9 +39,9 @@ src->eor = 0;
 }
 
 void generate_sequence(struct Rider *out, int size,int seed) {
-    /********** create initial pseudo-random sequence and store in file ******/
+/* ********* create initial pseudo-random sequence and store in file ***** */
     int i = 0;
-    fprintf(stderr,"Generated sequence %s:\n", out->filename);
+    fprintf(stderr,"Generated sequence in %s:\n", out->filename);
     while ( i < size) {
         
         if (seed < 256) {
@@ -52,4 +53,13 @@ void generate_sequence(struct Rider *out, int size,int seed) {
     }
     fprintf(stderr,"\n");
     close_rider(out); 
+}
+
+void read_next(struct Rider *src) {
+    src->next = fgetc(src->fp);
+    if (src->next < src->curr)
+        src->eor = 1;
+    if (src->next == EOF)
+        src->eof = 1;
+    src->curr = src->next;
 }

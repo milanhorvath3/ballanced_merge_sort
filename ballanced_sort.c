@@ -1,5 +1,5 @@
 /*
--create array of files
+- create array of files
 -assign array of riders to files
 -create src file
 -populate the src file

@@ -1,13 +1,13 @@
 /*
-create array of files
-assign array of riders to files
-create src file
-populate the src file
-distribute runs to 'read' files 
-merge from  'read files' to 'write files'
-swap riders from r to w
-continue till one run remain
-copy sorted seq. to out file 
+-create array of files
+-assign array of riders to files
+-create src file
+-populate the src file
+-distribute runs to 'read' files 
+-merge from  'read files' to 'write files'
+-swap riders from r to w
+-continue till one run remain
+-copy sorted seq. to out file 
 */
 #include"ballanced_sort.h"
 

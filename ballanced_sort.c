@@ -8,6 +8,7 @@
 -swap riders from r to w
 -continue till one run remain
 -copy sorted seq. to out file 
+-etc
 */
 #include"ballanced_sort.h"
 
